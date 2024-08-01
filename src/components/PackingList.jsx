@@ -1,16 +1,24 @@
-import React from 'react'
-import Item from './Item'
+import React from "react";
+import Item from "./Item";
 
-function PackingList({items, onDeleteItem}) {
-    // console.log(initialItems)
+function PackingList({ items, onDeleteItem, onToggleItem }) {
+  // console.log(initialItems)
   return (
-    <div className='list'>
-         {items.map((item)=> {
-            return <Item key={item.id} item={item} onDeleteItem={onDeleteItem}/>
-         })}
-        
+    <div className="list">
+      <ul>
+      {items.map((item) => {
+        return (
+          <Item
+            key={item.id}
+            item={item}
+            onDeleteItem={onDeleteItem}
+            onToggleItem={onToggleItem}
+          />
+        );
+      })}
+      </ul>
     </div>
-  )
+  );
 }
 
-export default PackingList
+export default PackingList;
